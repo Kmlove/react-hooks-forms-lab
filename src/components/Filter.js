@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Filter({ onCategoryChange, search, handleFilterChange}) {
+function Filter({ onCategoryChange, search, onSearchChange, selectedCategory}) {
 
   return (
     <div className="Filter">
@@ -9,9 +9,9 @@ function Filter({ onCategoryChange, search, handleFilterChange}) {
         name="search" 
         placeholder="Search..." 
         value={search}
-        onChange={handleFilterChange}
+        onChange={onSearchChange}
       />
-      <select name="filter" onChange={onCategoryChange}>
+      <select name="filter" onChange={onCategoryChange} value={selectedCategory}>
         <option value="All">Filter by category</option>
         <option value="Produce">Produce</option>
         <option value="Dairy">Dairy</option>
